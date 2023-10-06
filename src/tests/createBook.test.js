@@ -11,7 +11,7 @@ describe("create book", () => {
 
    it("should be able to create a book sucessfully", async () => {
       const data = await request
-         .post("/products")
+         .post("/books")
          .send({
             name: "Harry Potter",
             pages: 325,
@@ -28,7 +28,7 @@ describe("create book", () => {
 
    it("should be able to create a book without a category", async () => {
       const data = await request
-         .post("/products")
+         .post("/books")
          .send({
             name: "Jogos Vorazes",
             pages: 225,
@@ -43,7 +43,7 @@ describe("create book", () => {
 
    it("should not be able to create a book with the same name", async () => {
       const data = await request
-         .post("/products")
+         .post("/books")
          .send({
             name: "Jogos Vorazes",
             pages: 225,

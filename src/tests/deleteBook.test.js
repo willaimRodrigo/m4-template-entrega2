@@ -4,7 +4,7 @@ import { request } from "./setupFiles";
 
 describe("delete book", () => {
    beforeAll(async () => {
-      await request.post("/products").send({
+      await request.post("/books").send({
          name: "Harry Potter",
          pages: 325,
          category: "fantasia",
@@ -12,12 +12,12 @@ describe("delete book", () => {
    });
 
    it("should throw error when the id is incorrect", () => {
-      request.delete("/products/1").expect(204);
+      request.delete("/books/1").expect(204);
    });
 
    it("should throw error when the id is incorrect", async () => {
       const data = await request
-         .delete("/products/2")
+         .delete("/books/2")
          .expect(404)
          .then((response) => response.body);
 

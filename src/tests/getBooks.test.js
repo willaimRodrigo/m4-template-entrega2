@@ -5,7 +5,7 @@ import { request } from "./setupFiles";
 
 describe("get books", () => {
    beforeAll(async () => {
-      await request.post("/products").send({
+      await request.post("/books").send({
          name: "Harry Potter",
          pages: 325,
          category: "fantasia",
@@ -14,7 +14,7 @@ describe("get books", () => {
 
    it("should be able to get books correctly", async () => {
       const data = await request
-         .get("/products")
+         .get("/books")
          .expect(200)
          .then((response) => response.body);
 
@@ -28,7 +28,7 @@ describe("get books", () => {
 
    it("should be able to get a single book with the correct id", async () => {
       const data = await request
-         .get("/products/1")
+         .get("/books/1")
          .expect(200)
          .then((response) => response.body);
 
@@ -40,7 +40,7 @@ describe("get books", () => {
 
    it("should throw error when the id is incorrect", async () => {
       const data = await request
-         .get("/products/2")
+         .get("/books/2")
          .expect(404)
          .then((response) => response.body)
 
