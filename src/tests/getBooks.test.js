@@ -7,7 +7,7 @@ import { firstBookMock } from "./__mocks/books";
 
 describe("get books", () => {
    beforeAll(() => {
-      booksDatabase.push(firstBookMock);
+      booksDatabase.push(firstBookMock());
    });
 
    it("should be able to get books correctly", async () => {
@@ -15,6 +15,8 @@ describe("get books", () => {
          .get("/books")
          .expect(200)
          .then((response) => response.body);
+
+      console.log(data);   
 
       expect(data).toHaveLength(1);
 
