@@ -1,7 +1,7 @@
 import { describe, it, beforeAll } from "vitest";
 import { errorDefaultExpects } from "./utils/errorDefaultExpects";
 import { request } from "./setupFiles";
-import { booksDatabase } from "../database/database"
+import { booksDatabase } from "../database/database";
 import { firstBookMock } from "./__mocks/books";
 
 describe("delete book", () => {

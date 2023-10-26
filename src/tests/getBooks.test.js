@@ -16,8 +16,6 @@ describe("get books", () => {
          .expect(200)
          .then((response) => response.body);
 
-      console.log(data);   
-
       expect(data).toHaveLength(1);
 
       bookDefaultExpects(data[0]);
@@ -42,7 +40,7 @@ describe("get books", () => {
       const data = await request
          .get("/books/2")
          .expect(404)
-         .then((response) => response.body)
+         .then((response) => response.body);
 
       errorDefaultExpects(data);
    });
