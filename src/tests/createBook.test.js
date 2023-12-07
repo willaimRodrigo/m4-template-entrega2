@@ -21,7 +21,6 @@ describe("create book", () => {
       .then((response) => response.body);
 
     bookDefaultExpects(data);
-
     expect(data.category).toBeDefined();
     expect(data.category).toBeTypeOf("string");
     expect(data.id).toEqual(1);
@@ -38,7 +37,6 @@ describe("create book", () => {
       .then((response) => response.body);
 
     bookDefaultExpects(data);
-
     expect(data.category).toBeUndefined();
     expect(data.id).toEqual(2);
   });
